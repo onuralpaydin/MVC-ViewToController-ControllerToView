@@ -1,0 +1,45 @@
+﻿@model List<Kisi>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+
+    foreach (var item in Model)
+    {
+        <p>@item.Ad **** @item.Soyad</p>
+    }
+    foreach (var item in (List<Kisi>)ViewData["Kisiler"])
+    {
+        <p>@item.Ad - @item.Soyad</p>
+    }
+
+   
+}
+<h1 >@ViewBag.elemanSayisi</h1>
+<h1>@ViewBag.sonElemanAd</h1>
+<h1>@ViewBag.sonElemanSoyad</h1>
+<h1>@ViewBag.ilkEleman.Ad //////// @ViewBag.ilkEleman.Soyad </h1>
+
+
+<div class="sefa-tablo ">
+    <table class="table table-bordered table-striped table-hover ">
+        <tr>
+            <th>Kisi Adi</th>
+            <th>Kisi Soyadi</th>
+        </tr>
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+        <td>@item.Ad</td>
+        <td>@item.Soyad</td>
+        </tr>
+    }
+}
+
+    </table>
+
+</div>
